@@ -12,36 +12,8 @@
 </head>
 
 <body ng-app="customersApp" ng-controller="customersController">
-    <div class="container">
-        <h2>Customers</h2> Filter:
-        <input type="text" ng-model="customerFilter.name" />
-        <br/>
-        <br/>
-        <table class="table table-condensed">
-            <thead>
-                <tr>
-                <th  ng-click="doSort('name')"><b>Name</b></th>
-                <th  ng-click="doSort('city')"><b>City</b></th>
-                <th  ng-click="doSort('Order')"><b>Order Total</b></th>
-                <th  ng-click="doSort('joined')"><b>Joined</b></th>
-            </tr>
-            
-            </thead>
-            <tbody>
-                <tr ng-repeat="cust in customers |orderBy:sortBy:reverse | filter:customerFilter">
-                <td>{{cust.name}}</td>
-                <td>{{cust.city}}</td>
-                <td>{{cust.Order | currency}}</td>
-                <td>{{cust.joined | date}}</td>
-            </tr>
-
-            </tbody>
-            
-
-            <tr></tr>
-        </table>
-        <br/>
-        <span>Total customers: {{customers.length}}</span>
+    <div class="container" ng-view>
+        
 
     </div>
 
@@ -53,7 +25,7 @@ angular.min.js">
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    
+    <script src="https://code.angularjs.org/1.2.15/angular-route.js"></script>
     <script src="app/customersApp.js"></script>
      <script src="app/Controllers/customersController.js"> </script>
 </body>
