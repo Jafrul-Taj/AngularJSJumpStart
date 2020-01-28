@@ -11,7 +11,7 @@
 
 </head>
 
-<body ng-app ng-controller="customersController as custCon">
+<body ng-app="customersApp" ng-controller="customersController">
     <div class="container">
         <h2>Customers</h2> Filter:
         <input type="text" ng-model="customerFilter.name" />
@@ -28,7 +28,7 @@
             
             </thead>
             <tbody>
-                <tr ng-repeat="cust in custCon.customers |orderBy:sortBy:reverse | filter:customerFilter">
+                <tr ng-repeat="cust in customers |orderBy:sortBy:reverse | filter:customerFilter">
                 <td>{{cust.name}}</td>
                 <td>{{cust.city}}</td>
                 <td>{{cust.Order | currency}}</td>
@@ -41,7 +41,7 @@
             <tr></tr>
         </table>
         <br/>
-        <span>Total customers: {{custCon.customers.length}}</span>
+        <span>Total customers: {{customers.length}}</span>
 
     </div>
 
@@ -54,7 +54,8 @@ angular.min.js">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     
-     <script src="app/Controllers/customersControllerWithAs.js"> </script>
+    <script src="app/customersApp.js"></script>
+     <script src="app/Controllers/customersController.js"> </script>
 </body>
 
 </html>

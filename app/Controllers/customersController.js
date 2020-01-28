@@ -1,7 +1,9 @@
- function customersController($scope) {
+ 
+(function(){
+angular.module('customersApp').controller('customersController', function ($scope) {
      $scope.sortBy = 'name';
      $scope.reverse = false;
-     
+
      $scope.customers = [{
          joined: '2000-12-02',
          name: 'John',
@@ -28,4 +30,6 @@
          $scope.sortBy = propName;
          $scope.reverse = !$scope.reverse;
      };
- }
+ });
+    
+}());
