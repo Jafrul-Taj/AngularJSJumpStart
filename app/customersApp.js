@@ -8,6 +8,11 @@ app.config(function($routeProvider){
             controller: 'customersController',
             templateUrl: 'app/Views/customers.html'
         })
+        .when('/orders/:custId',{
+            controller: 'ordersController',
+            templateUrl: 'app/Views/orders.html'
+        })
+        
         .otherwise({redirectTo:'/'});
 
     });

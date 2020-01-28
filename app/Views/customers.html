@@ -9,6 +9,7 @@
                 <th  ng-click="doSort('city')"><b>City</b></th>
                 <th  ng-click="doSort('Order')"><b>Order Total</b></th>
                 <th  ng-click="doSort('joined')"><b>Joined</b></th>
+                <th>&nbsp;</th>
             </tr>
             
             </thead>
@@ -18,6 +19,7 @@
                 <td>{{cust.city}}</td>
                 <td>{{cust.Order | currency}}</td>
                 <td>{{cust.joined | date}}</td>
+                <td><a href="#/orders/{{cust.id}}">View Orders</a></td>
             </tr>
 
             </tbody>

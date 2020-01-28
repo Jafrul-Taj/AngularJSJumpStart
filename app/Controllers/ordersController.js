@@ -1,9 +1,20 @@
  
 (function(){
-angular.module('customersApp').controller('customersController', function ($scope) {
-     $scope.sortBy = 'name';
-     $scope.reverse = false;
+angular.module('customersApp').controller('ordersController', function ($scope,$routeParams) {
+    var customerId = $routeParams.custId;
+    $scope.orders = null;
+    
+    function init() {
 
+     for (var i = 0; i < $scope.customers.length; i++) {
+         if ($scope.customers[i].id === parseInt(customerId)) {
+             $scope.orders = $scope.customers[i].orders;
+             break;
+         }
+     }
+
+ }
+    
      $scope.customers = [{
          id:1,
          joined: '2000-12-02',
@@ -63,11 +74,7 @@ angular.module('customersApp').controller('customersController', function ($scop
          ]
          
      }];
-
-     $scope.doSort = function (propName) {
-         $scope.sortBy = propName;
-         $scope.reverse = !$scope.reverse;
-     };
- });
+    init();
+     });
+ }());
     
-}());
